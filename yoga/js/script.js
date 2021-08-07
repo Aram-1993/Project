@@ -34,7 +34,7 @@ info.addEventListener('click', function(event) {
 });
 
 //Timer
-let deadline = '2021.08.06';
+let deadline = '2021.08.10';
 
 function getTimeRemainig(endtime) {
    let t = Date.parse(endtime) - Date.parse(new Date()),
@@ -84,6 +84,39 @@ function updateClock() {
 }
 setClock('timer', deadline);
 
+//Window1
+
+let more = document.querySelector('.more'),
+    overlay = document.querySelector('.overlay'),
+    close = document.querySelector('.popup-close');
+
+    more.addEventListener('click', function() {
+        overlay.style.display = 'block';
+        this.classList.add('more-splash');
+        document.body.style.overflow = 'hidden';
+    });
+
+    close.addEventListener('click', function(){
+        overlay.style.display = 'none';
+        more.classList.remove('more-splash');
+        document.body.style.overflow = '';
+    });
+
+    //Window2
+
+    let descriptionBtn = document.querySelectorAll('.description-btn')[0],
+        priceSum = document.getElementsByClassName('counter');
+        
+
+        descriptionBtn.addEventListener('click', function(){
+           content.counter.style.display = 'block';
+           this.classList.add('content-splash');
+           document.body.style.overflow = 'hidden';
+
+        });
+         
+        console.log(descriptionBtn);
+        console.log(priceSum);
 
 });
 
